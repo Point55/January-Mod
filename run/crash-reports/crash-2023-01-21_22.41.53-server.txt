@@ -1,0 +1,113 @@
+---- Minecraft Crash Report ----
+// Surprise! Haha. Well, this is awkward.
+
+Time: 1/21/23 10:41 PM
+Description: Ticking entity
+
+java.lang.NullPointerException: Ticking entity
+	at com.point5.januarymod.ai.EntityAISleep.shouldExecute(EntityAISleep.java:57)
+	at net.minecraft.entity.ai.EntityAITasks.onUpdateTasks(EntityAITasks.java:72)
+	at net.minecraft.entity.EntityLiving.updateEntityActionState(EntityLiving.java:763)
+	at net.minecraft.entity.EntityLivingBase.onLivingUpdate(EntityLivingBase.java:2359)
+	at net.minecraft.entity.EntityLiving.onLivingUpdate(EntityLiving.java:577)
+	at net.minecraft.entity.EntityAgeable.onLivingUpdate(EntityAgeable.java:178)
+	at net.minecraft.entity.passive.EntityAnimal.onLivingUpdate(EntityAnimal.java:45)
+	at com.point5.januarymod.entity.fox.EntityFox.onLivingUpdate(EntityFox.java:272)
+	at net.minecraft.entity.EntityLivingBase.onUpdate(EntityLivingBase.java:2179)
+	at net.minecraft.entity.EntityLiving.onUpdate(EntityLiving.java:295)
+	at com.point5.januarymod.entity.fox.EntityFox.onUpdate(EntityFox.java:225)
+	at net.minecraft.world.World.updateEntityWithOptionalForce(World.java:1996)
+	at net.minecraft.world.WorldServer.updateEntityWithOptionalForce(WorldServer.java:832)
+	at net.minecraft.world.World.updateEntity(World.java:1958)
+	at net.minecraft.world.World.updateEntities(World.java:1762)
+	at net.minecraft.world.WorldServer.updateEntities(WorldServer.java:613)
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:767)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:668)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:185)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:526)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at com.point5.januarymod.ai.EntityAISleep.shouldExecute(EntityAISleep.java:57)
+	at net.minecraft.entity.ai.EntityAITasks.onUpdateTasks(EntityAITasks.java:72)
+	at net.minecraft.entity.EntityLiving.updateEntityActionState(EntityLiving.java:763)
+	at net.minecraft.entity.EntityLivingBase.onLivingUpdate(EntityLivingBase.java:2359)
+	at net.minecraft.entity.EntityLiving.onLivingUpdate(EntityLiving.java:577)
+	at net.minecraft.entity.EntityAgeable.onLivingUpdate(EntityAgeable.java:178)
+	at net.minecraft.entity.passive.EntityAnimal.onLivingUpdate(EntityAnimal.java:45)
+	at com.point5.januarymod.entity.fox.EntityFox.onLivingUpdate(EntityFox.java:272)
+	at net.minecraft.entity.EntityLivingBase.onUpdate(EntityLivingBase.java:2179)
+	at net.minecraft.entity.EntityLiving.onUpdate(EntityLiving.java:295)
+	at com.point5.januarymod.entity.fox.EntityFox.onUpdate(EntityFox.java:225)
+	at net.minecraft.world.World.updateEntityWithOptionalForce(World.java:1996)
+	at net.minecraft.world.WorldServer.updateEntityWithOptionalForce(WorldServer.java:832)
+	at net.minecraft.world.World.updateEntity(World.java:1958)
+
+-- Entity being ticked --
+Details:
+	Entity Type: januarymod:fox (com.point5.januarymod.entity.fox.EntityFox)
+	Entity ID: 46
+	Entity Name: entity.fox.name
+	Entity's Exact location: -108.09, 76.00, 289.93
+	Entity's Block location: World: (-109,76,289), Chunk: (at 3,4,1 in -7,18; contains blocks -112,0,288 to -97,255,303), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,0,0 to -1,255,511)
+	Entity's Momentum: 0.00, -0.08, 0.00
+	Entity's Passengers: []
+	Entity's Vehicle: ~~ERROR~~ NullPointerException: null
+Stacktrace:
+	at net.minecraft.world.World.updateEntities(World.java:1762)
+	at net.minecraft.world.WorldServer.updateEntities(WorldServer.java:613)
+
+-- Affected level --
+Details:
+	Level name: New World
+	All players: 0 total; []
+	Chunk stats: ServerChunkCache: 625 Drop: 0
+	Level seed: -7121226319374988036
+	Level generator: ID 00 - default, ver 1. Features enabled: true
+	Level generator options: 
+	Level spawn location: World: (56,64,256), Chunk: (at 8,4,0 in 3,16; contains blocks 48,0,256 to 63,255,271), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,0,0 to 511,255,511)
+	Level time: 53178 game time, 1412 day time
+	Level dimension: 0
+	Level storage version: 0x04ABD - Anvil
+	Level weather: Rain time: 112553 (now: false), thunder time: 57355 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: true
+Stacktrace:
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:767)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:668)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:185)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:526)
+	at java.lang.Thread.run(Thread.java:748)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_202, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 908277520 bytes (866 MB) / 1679818752 bytes (1602 MB) up to 11431051264 bytes (10901 MB)
+	JVM Flags: 0 total; 
+	IntCache: cache: 0, tcache: 0, allocated: 20, tallocated: 86
+	FML: MCP 9.42 Powered by Forge 14.23.5.2859 6 mods loaded, 6 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+
+	| State  | ID         | Version      | Source                                                             | Signature |
+	|:------ |:---------- |:------------ |:------------------------------------------------------------------ |:--------- |
+	| LCHIJA | minecraft  | 1.12.2       | minecraft.jar                                                      | None      |
+	| LCHIJA | mcp        | 9.42         | minecraft.jar                                                      | None      |
+	| LCHIJA | FML        | 8.0.99.99    | forge-1.12.2-14.23.5.2859_mapped_snapshot_20171003-1.12-recomp.jar | None      |
+	| LCHIJA | forge      | 14.23.5.2859 | forge-1.12.2-14.23.5.2859_mapped_snapshot_20171003-1.12-recomp.jar | None      |
+	| LCHIJA | januarymod | 1.0          | main                                                               | None      |
+	| LCHIJA | geckolib3  | 3.0.20       | forge-1.12.2-geckolib-3.0.21_mapped_snapshot_20171003-1.12.jar     | None      |
+
+	Loaded coremods (and transformers): 
+	GL info: ~~ERROR~~ RuntimeException: No OpenGL context found in the current thread.
+	Profiler Position: N/A (disabled)
+	Player Count: 0 / 8; []
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'fml,forge'

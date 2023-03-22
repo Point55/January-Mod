@@ -1,0 +1,152 @@
+{
+  "reindeer.hurt": {
+    "category": "entity",
+    "sounds": [
+      {
+        "name": "januarymod:reindeer.hurt",
+        "stream": true
+      }
+    ]
+  },
+ "reindeer.death": {
+    "category": "entity",
+    "sounds": [
+      {
+        "name": "januarymod:reindeer.death",
+        "stream": true
+      }
+    ]
+  },
+ "reindeer.begging": {
+    "category": "player",
+    "sounds": [
+      {
+        "name": "januarymod:reindeer.begging",
+        "stream": true
+      }
+    ]
+  },
+ "reindeer.living": {
+    "category": "entity",
+    "sounds": [
+      {
+        "name": "januarymod:reindeer.living",
+        "stream": true
+      }
+    ]
+  },
+  "fox_sniffing": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "januarymod:fox_sniffing",
+        "stream": false
+      }
+    ]
+  },
+  "fox_eat": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "januarymod:fox_eat_1",
+        "stream": false
+      },
+      {
+        "name": "januarymod:fox_eat_2",
+        "stream": false
+      },
+      {
+        "name": "januarymod:fox_eat_3",
+        "stream": false
+      }
+    ]
+  },
+  "fox_death": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "januarymod:fox_death_1",
+        "stream": false
+      },
+      {
+        "name": "januarymod:fox_death_2",
+        "stream": false
+      }
+    ]
+  },
+  "fox_hurt": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "januarymod:fox_hurt_1",
+        "stream": false
+      },
+      {
+        "name": "januarymod:fox_hurt_2",
+        "stream": false
+      },
+      {
+        "name": "januarymod:fox_hurt_3",
+        "stream": false
+      },
+      {
+        "name": "januarymod:fox_hurt_4",
+        "stream": false
+      }
+    ]
+  },
+  "fox_sleep": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "januarymod:fox_sleep_1",
+        "stream": false
+      },
+      {
+        "name": "januarymod:fox_sleep_2",
+        "stream": false
+      },
+      {
+        "name": "januarymod:fox_sleep_3",
+        "stream": false
+      },
+      {
+        "name": "januarymod:fox_sleep_4",
+        "stream": false
+      },
+      {
+        "name": "januarymod:fox_sleep_5",
+        "stream": false
+      }
+    ]
+  },
+  "fox_idle": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "januarymod:fox_idle_1",
+        "stream": false
+      },
+      {
+        "name": "januarymod:fox_idle_2",
+        "stream": false
+      },
+      {
+        "name": "januarymod:fox_idle_3",
+        "stream": false
+      },
+      {
+        "name": "januarymod:fox_idle_4",
+        "stream": false
+      },
+      {
+        "name": "januarymod:fox_idle_5",
+        "stream": false
+      },
+      {
+        "name": "januarymod:fox_idle_6",
+        "stream": false
+      }
+    ]
+  }
+}

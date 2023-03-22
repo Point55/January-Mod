@@ -1,0 +1,143 @@
+---- Minecraft Crash Report ----
+// Hi. I'm Minecraft, and I'm a crashaholic.
+
+Time: 3/19/23 12:58 AM
+Description: Ticking entity
+
+java.lang.NullPointerException: Ticking entity
+	at com.point5.januarymod.entity.fox.EntityFox.isSleeping(EntityFox.java:208)
+	at com.point5.januarymod.events.EntityEventHandler.onLivingUpdate(EntityEventHandler.java:87)
+	at net.minecraftforge.fml.common.eventhandler.ASMEventHandler_5_EntityEventHandler_onLivingUpdate_LivingUpdateEvent.invoke(.dynamic)
+	at net.minecraftforge.fml.common.eventhandler.ASMEventHandler.invoke(ASMEventHandler.java:90)
+	at net.minecraftforge.fml.common.eventhandler.EventBus.post(EventBus.java:182)
+	at net.minecraftforge.common.ForgeHooks.onLivingUpdate(ForgeHooks.java:581)
+	at net.minecraft.entity.EntityLivingBase.onUpdate(EntityLivingBase.java:2095)
+	at net.minecraft.entity.EntityLiving.onUpdate(EntityLiving.java:295)
+	at com.point5.januarymod.entity.fox.EntityFox.onUpdate(EntityFox.java:246)
+	at net.minecraft.world.World.updateEntityWithOptionalForce(World.java:1996)
+	at net.minecraft.world.World.updateEntity(World.java:1958)
+	at net.minecraft.world.World.updateEntities(World.java:1762)
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1847)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1098)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:398)
+	at net.minecraft.client.main.Main.main(Main.java:118)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.minecraftforge.legacydev.Main.start(Main.java:86)
+	at net.minecraftforge.legacydev.MainClient.main(MainClient.java:29)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Client thread
+Stacktrace:
+	at com.point5.januarymod.entity.fox.EntityFox.isSleeping(EntityFox.java:208)
+	at com.point5.januarymod.events.EntityEventHandler.onLivingUpdate(EntityEventHandler.java:87)
+	at net.minecraftforge.fml.common.eventhandler.ASMEventHandler_5_EntityEventHandler_onLivingUpdate_LivingUpdateEvent.invoke(.dynamic)
+	at net.minecraftforge.fml.common.eventhandler.ASMEventHandler.invoke(ASMEventHandler.java:90)
+	at net.minecraftforge.fml.common.eventhandler.EventBus.post(EventBus.java:182)
+	at net.minecraftforge.common.ForgeHooks.onLivingUpdate(ForgeHooks.java:581)
+	at net.minecraft.entity.EntityLivingBase.onUpdate(EntityLivingBase.java:2095)
+	at net.minecraft.entity.EntityLiving.onUpdate(EntityLiving.java:295)
+	at com.point5.januarymod.entity.fox.EntityFox.onUpdate(EntityFox.java:246)
+	at net.minecraft.world.World.updateEntityWithOptionalForce(World.java:1996)
+	at net.minecraft.world.World.updateEntity(World.java:1958)
+
+-- Entity being ticked --
+Details:
+	Entity Type: januarymod:fox (com.point5.januarymod.entity.fox.EntityFox)
+	Entity ID: 124
+	Entity Name: entity.fox.name
+	Entity's Exact location: -571.91, 70.00, -1850.01
+	Entity's Block location: World: (-572,70,-1851), Chunk: (at 4,4,5 in -36,-116; contains blocks -576,0,-1856 to -561,255,-1841), Region: (-2,-4; contains chunks -64,-128 to -33,-97, blocks -1024,0,-2048 to -513,255,-1537)
+	Entity's Momentum: 0.00, -0.08, 0.00
+	Entity's Passengers: []
+	Entity's Vehicle: ~~ERROR~~ NullPointerException: null
+Stacktrace:
+	at net.minecraft.world.World.updateEntities(World.java:1762)
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 1 total; [EntityPlayerSP['Player902'/123, l='MpServer', x=-574.48, y=70.00, z=-1852.53]]
+	Chunk stats: MultiplayerChunkCache: 164, 164
+	Level seed: 0
+	Level generator: ID 00 - default, ver 1. Features enabled: false
+	Level generator options: 
+	Level spawn location: World: (-879,64,-329), Chunk: (at 1,4,7 in -55,-21; contains blocks -880,0,-336 to -865,255,-321), Region: (-2,-1; contains chunks -64,-32 to -33,-1, blocks -1024,0,-512 to -513,255,-1)
+	Level time: 116481 game time, 13185 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: false
+	Forced entities: 25 total; [EntityBat['Bat'/197, l='MpServer', x=-602.51, y=24.00, z=-1905.53], EntityRabbit['Rabbit'/206, l='MpServer', x=-620.49, y=71.00, z=-1928.49], EntityPlayerSP['Player902'/123, l='MpServer', x=-574.48, y=70.00, z=-1852.53], EntityBat['Bat'/208, l='MpServer', x=-603.08, y=17.02, z=-1920.06], EntityFox['entity.fox.name'/151, l='MpServer', x=-603.16, y=69.00, z=-1829.95], EntityBat['Bat'/152, l='MpServer', x=-603.25, y=21.82, z=-1843.21], EntityBat['Bat'/153, l='MpServer', x=-607.75, y=22.10, z=-1844.54], EntityBat['Bat'/154, l='MpServer', x=-601.61, y=21.99, z=-1840.44], EntityBat['Bat'/155, l='MpServer', x=-579.33, y=45.16, z=-1835.62], EntityFox['entity.fox.name'/156, l='MpServer', x=-573.53, y=69.00, z=-1856.51], EntityBat['Bat'/157, l='MpServer', x=-577.17, y=45.05, z=-1840.07], EntityBat['Bat'/158, l='MpServer', x=-590.78, y=29.74, z=-1903.54], EntityDonkey['Donkey'/159, l='MpServer', x=-560.56, y=71.00, z=-1909.29], EntityWolf['Wolf'/160, l='MpServer', x=-569.71, y=70.00, z=-1790.29], EntityReindeer['entity.reindeer.name'/161, l='MpServer', x=-547.99, y=70.00, z=-1843.02], EntityBat['Bat'/162, l='MpServer', x=-574.25, y=43.10, z=-1838.25], EntityPig['Pig'/163, l='MpServer', x=-572.56, y=70.00, z=-1832.26], EntityReindeer['entity.reindeer.name'/164, l='MpServer', x=-534.04, y=70.00, z=-1854.58], EntityWolf['Wolf'/165, l='MpServer', x=-552.41, y=71.00, z=-1829.73], EntityWolf['Wolf'/166, l='MpServer', x=-559.35, y=71.00, z=-1826.40], EntityReindeer['entity.reindeer.name'/167, l='MpServer', x=-551.94, y=70.00, z=-1837.99], EntityPig['Pig'/168, l='MpServer', x=-531.24, y=70.00, z=-1773.18], EntityBat['Bat'/180, l='MpServer', x=-630.64, y=19.51, z=-1924.21], EntityFox['entity.fox.name'/124, l='MpServer', x=-571.91, y=70.00, z=-1850.01], EntityFox['entity.fox.name'/125, l='MpServer', x=-573.91, y=69.00, z=-1854.02]]
+	Retry entities: 0 total; []
+	Server brand: fml,forge
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.addWorldInfoToCrashReport(WorldClient.java:420)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:2741)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:419)
+	at net.minecraft.client.main.Main.main(Main.java:118)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.minecraftforge.legacydev.Main.start(Main.java:86)
+	at net.minecraftforge.legacydev.MainClient.main(MainClient.java:29)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_202, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 1226272296 bytes (1169 MB) / 1664614400 bytes (1587 MB) up to 11431051264 bytes (10901 MB)
+	JVM Flags: 0 total; 
+	IntCache: cache: 0, tcache: 0, allocated: 12, tallocated: 94
+	FML: MCP 9.42 Powered by Forge 14.23.5.2859 6 mods loaded, 6 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+
+	| State  | ID         | Version      | Source                                                             | Signature |
+	|:------ |:---------- |:------------ |:------------------------------------------------------------------ |:--------- |
+	| LCHIJA | minecraft  | 1.12.2       | minecraft.jar                                                      | None      |
+	| LCHIJA | mcp        | 9.42         | minecraft.jar                                                      | None      |
+	| LCHIJA | FML        | 8.0.99.99    | forge-1.12.2-14.23.5.2859_mapped_snapshot_20171003-1.12-recomp.jar | None      |
+	| LCHIJA | forge      | 14.23.5.2859 | forge-1.12.2-14.23.5.2859_mapped_snapshot_20171003-1.12-recomp.jar | None      |
+	| LCHIJA | januarymod | 1.0          | main                                                               | None      |
+	| LCHIJA | geckolib3  | 3.0.20       | forge-1.12.2-geckolib-3.0.21_mapped_snapshot_20171003-1.12.jar     | None      |
+
+	Loaded coremods (and transformers): 
+	GL info: ' Vendor: 'NVIDIA Corporation' Version: '4.6.0 NVIDIA 516.94' Renderer: 'NVIDIA GeForce GTX 970/PCIe/SSE2'
+	Launched Version: 1.12.2
+	LWJGL: 2.9.4
+	OpenGL: NVIDIA GeForce GTX 970/PCIe/SSE2 GL version 4.6.0 NVIDIA 516.94, NVIDIA Corporation
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: Yes
+	Is Modded: Definitely; Client brand changed to 'fml,forge'
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: English (US)
+	Profiler Position: N/A (disabled)
+	CPU: 12x Intel(R) Core(TM) i7-6800K CPU @ 3.40GHz

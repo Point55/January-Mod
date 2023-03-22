@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Implementation-Title: January Mod
+Implementation-Version: 1.0
+Specification-Vendor: examplemodsareus
+Specification-Title: examplemod
+Implementation-Timestamp: 2023-03-21T23:18:53+0100
+Specification-Version: 1
+Implementation-Vendor: examplemodsareus
+

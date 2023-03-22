@@ -1,0 +1,142 @@
+---- Minecraft Crash Report ----
+// Uh... Did I do that?
+
+Time: 1/6/23 11:43 AM
+Description: Rendering entity in world
+
+software.bernie.geckolib3.geo.exception.GeoModelException: januarymod:geo/entity/modelreindeer.geo.json: Could not find model.
+	at software.bernie.geckolib3.model.AnimatedGeoModel.getModel(AnimatedGeoModel.java:116)
+	at software.bernie.geckolib3.renderers.geo.GeoEntityRenderer.doRender(GeoEntityRenderer.java:116)
+	at software.bernie.geckolib3.renderers.geo.GeoEntityRenderer.doRender(GeoEntityRenderer.java:32)
+	at net.minecraft.client.renderer.entity.RenderManager.renderEntity(RenderManager.java:384)
+	at net.minecraft.client.renderer.entity.RenderManager.renderEntityStatic(RenderManager.java:368)
+	at net.minecraft.client.renderer.RenderGlobal.renderEntities(RenderGlobal.java:628)
+	at net.minecraft.client.renderer.EntityRenderer.renderWorldPass(EntityRenderer.java:1347)
+	at net.minecraft.client.renderer.EntityRenderer.renderWorld(EntityRenderer.java:1259)
+	at net.minecraft.client.renderer.EntityRenderer.updateCameraAndRender(EntityRenderer.java:1062)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1119)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:398)
+	at net.minecraft.client.main.Main.main(Main.java:118)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.minecraftforge.legacydev.Main.start(Main.java:86)
+	at net.minecraftforge.legacydev.MainClient.main(MainClient.java:29)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Client thread
+Stacktrace:
+	at software.bernie.geckolib3.model.AnimatedGeoModel.getModel(AnimatedGeoModel.java:116)
+	at software.bernie.geckolib3.renderers.geo.GeoEntityRenderer.doRender(GeoEntityRenderer.java:116)
+	at software.bernie.geckolib3.renderers.geo.GeoEntityRenderer.doRender(GeoEntityRenderer.java:32)
+
+-- Entity being rendered --
+Details:
+	Entity Type: januarymod:reindeer (com.point5.januarymod.entity.reindeer.EntityReindeer)
+	Entity ID: 79
+	Entity Name: entity.reindeer.name
+	Entity's Exact location: 95.31, 72.00, 246.42
+	Entity's Block location: World: (95,72,246), Chunk: (at 15,4,6 in 5,15; contains blocks 80,0,240 to 95,255,255), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,0,0 to 511,255,511)
+	Entity's Momentum: 0.00, -0.05, 0.00
+	Entity's Passengers: []
+	Entity's Vehicle: ~~ERROR~~ NullPointerException: null
+
+-- Renderer details --
+Details:
+	Assigned renderer: com.point5.januarymod.entity.reindeer.RenderReindeer@676d182d
+	Location: 12.50,1.00,4.67 - World: (12,1,4), Chunk: (at 12,0,4 in 0,0; contains blocks 0,0,0 to 15,255,15), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,0,0 to 511,255,511)
+	Rotation: 106.875
+	Delta: 0.539999
+Stacktrace:
+	at net.minecraft.client.renderer.entity.RenderManager.renderEntity(RenderManager.java:384)
+	at net.minecraft.client.renderer.entity.RenderManager.renderEntityStatic(RenderManager.java:368)
+	at net.minecraft.client.renderer.RenderGlobal.renderEntities(RenderGlobal.java:628)
+	at net.minecraft.client.renderer.EntityRenderer.renderWorldPass(EntityRenderer.java:1347)
+	at net.minecraft.client.renderer.EntityRenderer.renderWorld(EntityRenderer.java:1259)
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 1 total; [EntityPlayerSP['Player146'/340, l='MpServer', x=82.81, y=71.00, z=241.75]]
+	Chunk stats: MultiplayerChunkCache: 620, 620
+	Level seed: 0
+	Level generator: ID 00 - default, ver 1. Features enabled: false
+	Level generator options: 
+	Level spawn location: World: (192,64,256), Chunk: (at 0,4,0 in 12,16; contains blocks 192,0,256 to 207,255,271), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,0,0 to 511,255,511)
+	Level time: 70624 game time, 6153 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: survival (ID 0). Hardcore: false. Cheats: false
+	Forced entities: 62 total; [EntityZombie['Zombie'/3, l='MpServer', x=6.50, y=33.00, z=181.50], EntityZombie['Zombie'/131, l='MpServer', x=144.59, y=13.00, z=201.08], EntityCreeper['Creeper'/132, l='MpServer', x=146.51, y=14.00, z=200.79], EntitySkeleton['Skeleton'/5, l='MpServer', x=7.50, y=38.00, z=206.50], EntityCreeper['Creeper'/133, l='MpServer', x=148.50, y=38.00, z=212.50], EntityCreeper['Creeper'/6, l='MpServer', x=7.50, y=38.00, z=207.50], EntityCreeper['Creeper'/134, l='MpServer', x=147.50, y=38.00, z=210.50], EntityCreeper['Creeper'/7, l='MpServer', x=10.50, y=38.00, z=207.50], EntitySheep['Sheep'/135, l='MpServer', x=152.79, y=77.00, z=319.52], EntityZombie['Zombie'/8, l='MpServer', x=5.50, y=39.00, z=207.50], EntityZombie['Zombie'/136, l='MpServer', x=156.76, y=69.00, z=313.62], EntitySkeleton['Skeleton'/137, l='MpServer', x=157.50, y=69.00, z=318.50], EntityZombie['Zombie'/10, l='MpServer', x=7.50, y=39.00, z=210.50], EntityZombie['Zombie'/138, l='MpServer', x=157.58, y=69.00, z=307.15], EntityChicken['Chicken'/11, l='MpServer', x=5.72, y=71.00, z=296.10], EntityChicken['Chicken'/12, l='MpServer', x=5.64, y=71.00, z=298.15], EntitySheep['Sheep'/21, l='MpServer', x=17.27, y=66.00, z=174.46], EntitySheep['Sheep'/22, l='MpServer', x=24.67, y=68.00, z=177.20], EntityCreeper['Creeper'/23, l='MpServer', x=28.50, y=33.00, z=231.50], EntityChicken['Chicken'/24, l='MpServer', x=20.73, y=68.00, z=243.90], EntityItem['item.item.egg'/25, l='MpServer', x=21.16, y=68.00, z=244.26], EntitySpider['Spider'/26, l='MpServer', x=22.22, y=43.00, z=308.01], EntitySkeleton['Skeleton'/27, l='MpServer', x=28.50, y=43.00, z=309.50], EntitySkeleton['Skeleton'/28, l='MpServer', x=31.50, y=43.00, z=311.50], EntitySkeleton['Skeleton'/159, l='MpServer', x=161.70, y=70.00, z=320.50], EntitySkeleton['Skeleton'/34, l='MpServer', x=45.51, y=66.77, z=163.59], EntityBat['Bat'/35, l='MpServer', x=30.24, y=31.74, z=230.08], EntityItem['item.item.egg'/36, l='MpServer', x=41.41, y=65.00, z=249.74], EntityWitch['Witch'/37, l='MpServer', x=34.49, y=43.00, z=312.90], EntitySkeleton['Skeleton'/38, l='MpServer', x=32.50, y=43.00, z=313.50], EntityCreeper['Creeper'/49, l='MpServer', x=56.68, y=48.00, z=190.47], EntityChicken['Chicken'/50, l='MpServer', x=49.16, y=67.00, z=245.50], EntityPlayerSP['Player146'/340, l='MpServer', x=82.81, y=71.00, z=241.75], EntitySkeleton['Skeleton'/63, l='MpServer', x=64.46, y=48.00, z=195.22], EntityChicken['Chicken'/64, l='MpServer', x=71.63, y=74.00, z=220.88], EntityReindeer['entity.reindeer.name'/65, l='MpServer', x=73.84, y=73.00, z=226.98], EntityCreeper['Creeper'/66, l='MpServer', x=75.77, y=72.00, z=231.48], EntitySheep['Sheep'/67, l='MpServer', x=68.23, y=64.00, z=297.46], EntityBat['Bat'/74, l='MpServer', x=83.06, y=24.33, z=165.69], EntityBat['Bat'/75, l='MpServer', x=84.05, y=38.10, z=172.00], EntityCreeper['Creeper'/76, l='MpServer', x=93.31, y=49.00, z=198.49], EntityCreeper['Creeper'/77, l='MpServer', x=92.50, y=50.00, z=202.50], EntityReindeer['entity.reindeer.name'/78, l='MpServer', x=94.52, y=72.00, z=217.97], EntityReindeer['entity.reindeer.name'/79, l='MpServer', x=95.31, y=72.00, z=246.42], EntitySheep['Sheep'/80, l='MpServer', x=91.47, y=73.00, z=287.59], EntitySkeleton['Skeleton'/92, l='MpServer', x=109.25, y=71.00, z=193.27], EntityReindeer['entity.reindeer.name'/93, l='MpServer', x=105.05, y=71.00, z=202.92], EntityReindeer['entity.reindeer.name'/94, l='MpServer', x=110.06, y=72.00, z=249.00], EntitySheep['Sheep'/95, l='MpServer', x=100.00, y=75.00, z=282.51], EntitySheep['Sheep'/96, l='MpServer', x=97.55, y=75.00, z=283.58], EntitySheep['Sheep'/97, l='MpServer', x=107.56, y=71.00, z=315.27], EntityEnderman['Enderman'/102, l='MpServer', x=121.48, y=52.00, z=211.16], EntityXPOrb['Experience Orb'/103, l='MpServer', x=122.98, y=69.00, z=228.46], EntityReindeer['entity.reindeer.name'/104, l='MpServer', x=127.18, y=70.00, z=232.38], EntityWolf['Wolf'/105, l='MpServer', x=123.46, y=64.00, z=282.19], EntityItem['item.item.arrow'/106, l='MpServer', x=123.13, y=64.00, z=282.68], EntityItem['item.item.bone'/107, l='MpServer', x=123.13, y=64.00, z=283.37], EntitySpider['Spider'/115, l='MpServer', x=142.50, y=16.00, z=168.50], EntityBat['Bat'/116, l='MpServer', x=131.75, y=52.10, z=217.75], EntityBat['Bat'/117, l='MpServer', x=131.75, y=52.10, z=217.75], EntityBat['Bat'/118, l='MpServer', x=129.58, y=51.10, z=211.48], EntityCreeper['Creeper'/119, l='MpServer', x=132.70, y=51.00, z=215.70]]
+	Retry entities: 0 total; []
+	Server brand: fml,forge
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.addWorldInfoToCrashReport(WorldClient.java:420)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:2741)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:419)
+	at net.minecraft.client.main.Main.main(Main.java:118)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.minecraftforge.legacydev.Main.start(Main.java:86)
+	at net.minecraftforge.legacydev.MainClient.main(MainClient.java:29)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_202, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 1165492456 bytes (1111 MB) / 1709178880 bytes (1630 MB) up to 11431051264 bytes (10901 MB)
+	JVM Flags: 0 total; 
+	IntCache: cache: 7, tcache: 0, allocated: 12, tallocated: 94
+	FML: MCP 9.42 Powered by Forge 14.23.5.2859 6 mods loaded, 6 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+
+	| State  | ID         | Version      | Source                                                             | Signature |
+	|:------ |:---------- |:------------ |:------------------------------------------------------------------ |:--------- |
+	| LCHIJA | minecraft  | 1.12.2       | minecraft.jar                                                      | None      |
+	| LCHIJA | mcp        | 9.42         | minecraft.jar                                                      | None      |
+	| LCHIJA | FML        | 8.0.99.99    | forge-1.12.2-14.23.5.2859_mapped_snapshot_20171003-1.12-recomp.jar | None      |
+	| LCHIJA | forge      | 14.23.5.2859 | forge-1.12.2-14.23.5.2859_mapped_snapshot_20171003-1.12-recomp.jar | None      |
+	| LCHIJA | januarymod | 1.0          | main                                                               | None      |
+	| LCHIJA | geckolib3  | 3.0.20       | forge-1.12.2-geckolib-3.0.21_mapped_snapshot_20171003-1.12.jar     | None      |
+
+	Loaded coremods (and transformers): 
+	GL info: ' Vendor: 'NVIDIA Corporation' Version: '4.6.0 NVIDIA 516.94' Renderer: 'NVIDIA GeForce GTX 970/PCIe/SSE2'
+	Launched Version: 1.12.2
+	LWJGL: 2.9.4
+	OpenGL: NVIDIA GeForce GTX 970/PCIe/SSE2 GL version 4.6.0 NVIDIA 516.94, NVIDIA Corporation
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: Yes
+	Is Modded: Definitely; Client brand changed to 'fml,forge'
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: English (US)
+	Profiler Position: N/A (disabled)
+	CPU: 12x Intel(R) Core(TM) i7-6800K CPU @ 3.40GHz

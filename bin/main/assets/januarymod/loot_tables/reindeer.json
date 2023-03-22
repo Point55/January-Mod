@@ -1,0 +1,24 @@
+{
+	"pools": [
+		{
+			"name": "antler",
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "item",
+					"weight": 100,
+					"name": "reindeermod:antler",
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"min": 1,
+								"max": 2
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}
